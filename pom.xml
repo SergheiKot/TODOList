@@ -47,7 +47,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.5.Final</version>
 		</dependency>
-	</dependencies>
+
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>7.4.1.jre11</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
