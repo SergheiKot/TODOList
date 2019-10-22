@@ -17,6 +17,15 @@ public class Task {
         this.task = task;
     }
 
+    public Task(int id) {
+        this.id = id;
+    }
+
+    public Task(int id, String task) {
+        this.id = id;
+        this.task = task;
+    }
+
     public int getId() {
         return id;
     }
@@ -27,5 +36,9 @@ public class Task {
 
     public void setTask(String task) {
         this.task = task;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
