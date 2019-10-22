@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api")
-public class MainController {
+public class ApiController {
 
     @GetMapping
-    public String list() {
+    public String getAll() {
         return "Test";
     }
 
