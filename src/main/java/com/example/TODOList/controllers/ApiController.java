@@ -2,7 +2,6 @@ package com.example.TODOList.controllers;
 
 import com.example.TODOList.hibernate.entities.Task;
 import com.example.TODOList.services.TaskService;
-import javassist.NotFoundException;
 import org.json.JSONObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,11 +30,11 @@ public class ApiController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity getOne(@PathVariable int id) throws NotFoundException {
+    public ResponseEntity getOne(@PathVariable int id) {
 
         Task task = taskService.findTask(id);
         try {
-            JSONObject answer = new JSONObject().append("" + id, task.getTask());
+            JSONObject answer = new JSONObject().append(Integer.toString(id), task.getTask());
             return ResponseEntity.ok(answer.toString());
         } catch (NullPointerException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
